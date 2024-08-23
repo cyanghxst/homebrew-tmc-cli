@@ -6,10 +6,12 @@ class TmcCli < Formula
   license "MIT"
 
   def install
-    system "./configure", "--disable-silent-rules", *std_configure_args
+    chmod "+x", "scripts/install.sh"
+    system "./scripts/install.sh", prefix
+    bin.install "./scripts/install.sh"
   end
 
   test do
-    system "false"
+    system "#{bin}/tmc-cli", "--version"
   end
 end
