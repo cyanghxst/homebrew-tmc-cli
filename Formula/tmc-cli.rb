@@ -6,9 +6,7 @@ class TmcCli < Formula
   license "MIT"
 
   def install
-    chmod "+x", "scripts/install.sh"
-    system "./scripts/install.sh", prefix
-    bin.install "./scripts/install.sh"
+    bin.install "tmc"
   end
 
   test do
